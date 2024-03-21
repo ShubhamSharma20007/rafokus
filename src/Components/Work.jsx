@@ -37,20 +37,39 @@ const Work = () => {
 
   const { scrollY, scrollYProgress } = useScroll();
 
-  useMotionValueEvent(scrollYProgress, "change", (latest) => {
-    showtheImages(Math.floor(latest * 100));
-  });
 
-  function showtheImages(scrollY) {
-    console.log(scrollY)
-    switch (scrollY) {
-      case 10:
-        console.log("first show");
-      case 20:
-        console.log("second show");
-    }
+
+ scrollYProgress.on("change",(latest)=>{
+  const scrollY = Math.floor(latest *100)
+  function imageShow(arr){
+    setImages(prev=>(
+      prev.map((image,index)=>{
+          return(
+            {...image,isActive:arr.includes(index)}
+          )
+      })
+    ))
   }
 
+  switch(scrollY){
+    case 1:
+      imageShow([])
+      break;
+      case 2:
+        imageShow([0,1])
+        break;
+        case 3:
+          imageShow([0,1,2])
+          break;
+          case 4:
+            imageShow([0,1,2,3])
+            break;
+            case 5:
+              imageShow([0,1,2,3,4])
+              break;
+              
+  }
+ })
 
   return (
     <div>
