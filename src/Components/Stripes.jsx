@@ -26,7 +26,7 @@ const Stripes = () => {
     {
         data.map((item,index)=>{
           return(
-            <Stripe img={item.path} number={item.number}/>
+            <Stripe key={index} img={item.path} number={item.number}/>
           )
         })
       }

@@ -32,7 +32,7 @@ const Marquess = () => {
     <div className='mt-[5vw] py-8' >
       {
         images.map((url,index)=>(
-            <Marque imagesUrl ={url} />
+            <Marque key={index} imagesUrl ={url} />
         ))
       }
     </div>

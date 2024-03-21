@@ -11,13 +11,13 @@ const Navbar = () => {
     <div className="links flex gap-14 ml-20">
       {  ["Home","Work","Culture","","News"].map((ele,index)=>{
         return(
-            <a className='text-sm flex items-center gap-1 text-white'  href="">
+            <a  key={index} className='text-sm flex items-center gap-1 text-white'  href="">
                {
-                ele.length === 0 ? <span className='w-[0.1px] h-8 bg-zinc-700'></span> : ""
+                ele.length === 0 ? <span key={index}  className='w-[0.1px] h-8 bg-zinc-700'></span> : ""
                }
                {
                 index === 1 && (
-                    <span style={{boxShadow: '0 0 0.45rem #00FF19'}} className='inline-block w-2 h-2 bg-green-500 rounded-full'></span>
+                    <span  key={index} style={{boxShadow: '0 0 0.45rem #00FF19'}} className='inline-block w-2 h-2 bg-green-500 rounded-full'></span>
                 )
                }
                 {ele}

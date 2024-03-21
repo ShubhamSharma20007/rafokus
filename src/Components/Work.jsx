@@ -1,7 +1,8 @@
-import React, { useEffect } from "react";
-
+import React, { useEffect, useState } from "react";
+import { motion } from "framer-motion";
+import { useScroll, useMotionValueEvent } from "framer-motion";
 const Work = () => {
-  const images = [
+  const [images, setImages] = useState([
     {
       url: "https://images.unsplash.com/photo-1501612780327-45045538702b?q=80&w=1470&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
       top: "50%",
@@ -32,10 +33,23 @@ const Work = () => {
       left: "55%",
       isActive: false,
     },
-  ];
+  ]);
 
+  const { scrollY, scrollYProgress } = useScroll();
 
+  useMotionValueEvent(scrollYProgress, "change", (latest) => {
+    showtheImages(Math.floor(latest * 100));
+  });
 
+  function showtheImages(scrollY) {
+    console.log(scrollY)
+    switch (scrollY) {
+      case 10:
+        console.log("first show");
+      case 20:
+        console.log("second show");
+    }
+  }
 
 
   return (
@@ -47,9 +61,17 @@ const Work = () => {
           </h1>
           <div className="absolute w-full h-full  top-0 ">
             {images.map((image, index) => {
-              return(
-                image.isActive && ( <img className="absolute w-60 rounded-md -translate-x-[50%] -translate-y-[50%]" style={{top:image.top, left:image.left}} src={image.url} alt="" />)
-              )
+              return (
+                image.isActive && (
+                  <img
+                    key={index}
+                    className="absolute w-60 rounded-md -translate-x-[50%] -translate-y-[50%]"
+                    style={{ top: image.top, left: image.left }}
+                    src={image.url}
+                    alt=""
+                  />
+                )
+              );
             })}
           </div>
         </div>
