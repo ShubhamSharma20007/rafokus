@@ -69,7 +69,7 @@ const Products = () => {
           );
         })}
         <div className="w-full h-full absolute pointer-events-none top-0">
-          <motion.div animate={{y:position+'rem'}} transition={{ease:[0.76, 0, 0.24, 1],duration:.5}}  initial={{y:0,x:'-50%'}} className=" overflow-hidden window w-[25rem] absolute left-[43%]  h-[20rem]  ">
+          <motion.div animate={{y:position+'rem'}} transition={{ease:[0.76, 0, 0.24, 1],duration:.5}}  initial={{y:0,x:'-50%'}} className=" overflow-hidden window w-[25rem] absolute left-[50%] md:left-[43%]   h-[20rem]  ">
             <motion.div transition={{ease:[0.76, 0, 0.24, 1],duration:.5}} animate={{y:-position+"rem"}}  className="window w-full  h-full">
                 <video src={video1} autoPlay muted loop  className="h-full w-full object-cover"></video>
             </motion.div>

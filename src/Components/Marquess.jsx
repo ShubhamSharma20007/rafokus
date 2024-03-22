@@ -29,7 +29,7 @@ const Marquess = () => {
     ],
   ];
   return (
-    <div className="mt-[5vw]   py-8 overflow-hidden relative w-full whitespace-nowrap">
+    <div className="md:mt-[5vw] m-0   py-8 overflow-hidden relative w-full whitespace-nowrap">
       {images.map((url, index) => (<Marque key={index} direction={index=== 0 ? "left":"right"} imagesUrl={url} />
       ))}
     </div>

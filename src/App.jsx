@@ -14,14 +14,14 @@ const App = () => {
   const locomotiveScroll = new LocomotiveScroll();
   return (
     <div>
-      <div className="w-full min-h-screen bg-zinc-900 ">
-        {/* <Navbar /> */}
+      <div className="w-full min-h-screen bg-zinc-900 overflow-hidden">
+        <Navbar />
         <Work/>
-        {/* <Stripes/>
+        <Stripes/>
         <Products/>
         <Marquess/>
         <Cards/>
-        <Footer/> */}
+        <Footer/>
       </div>
     </div>
   );

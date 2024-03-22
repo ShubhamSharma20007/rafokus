@@ -73,12 +73,12 @@ const Work = () => {
 
   return (
     <>
-      <div className="w-full">
-        <div className="relative max-w-screen-lg mx-auto">
-          <h1 className=" text-[10rem]  md:text-[30rem] text-center text-white font-medium">
+      <div className="w-full md:h-[100vh] h-screen bg-[#000000]">
+        <div className="relative max-w-screen-lg m-auto h-full flex justify-center items-center"  >
+          <h1 className=" text-[30vw]  md:text-[30vw] text-center text-white font-medium">
             Work
           </h1>
-          <div className="absolute w-full h-full  top-0 ">
+          <div className="absolute w-full h-full md:block   top-0 ">
             {images.map((image, index) => {
               return (
                 image.isActive && (

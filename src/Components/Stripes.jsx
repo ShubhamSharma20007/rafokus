@@ -22,7 +22,7 @@ const Stripes = () => {
   ];
   return (
     <div>
-    <div className="flex  items-center">
+    <div className="flex md:p-0 p-4   flex-wrap md:flex-nowrap items-center">
     {
         data.map((item,index)=>{
           return(
