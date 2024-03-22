@@ -1,14 +1,24 @@
-import React from 'react'
+import React from 'react';
+import "../index.css";
 import { MdOutlineSubdirectoryArrowRight } from "react-icons/md";
-const Button = ({title="Get Started"}) => {
+import { motion } from 'framer-motion';
+
+const Button = ({ title = "Get Started" }) => {
   return (
     <div>
-        <div className="min-w-40 max-w-44 flex justify-between items-center gap-x-3 bg-zinc-100 px-4 py-2 text-black rounded-full">
-            <span className='text-md font-regular'>{title}</span>
-            <MdOutlineSubdirectoryArrowRight />
-        </div>
-    </div>
-  )
-}
+      <div className="min-w-40 max-w-44 relative overflow-hidde">
+        <button  className="relative main_btn bg-zinc-100 px-4 py-2 text-black rounded-full transition-colors hover:bg-orange">
 
-export default Button
+          <div className="flex btn1 ab justify-between items-center gap-x-3">
+            <span className="text-sm font-regular">{title}</span>
+            <MdOutlineSubdirectoryArrowRight />
+          </div>
+
+        </button>
+        
+      </div>
+    </div>
+  );
+};
+
+export default Button;

@@ -15,13 +15,13 @@ const App = () => {
   return (
     <div>
       <div className="w-full min-h-screen bg-zinc-900 ">
-        <Navbar />
+        {/* <Navbar /> */}
         <Work/>
-        <Stripes/>
+        {/* <Stripes/>
         <Products/>
         <Marquess/>
         <Cards/>
-        <Footer/>
+        <Footer/> */}
       </div>
     </div>
   );

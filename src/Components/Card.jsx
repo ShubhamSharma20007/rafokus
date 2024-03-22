@@ -1,9 +1,10 @@
+import { motion } from 'framer-motion';
 import React from 'react'
 import { FaArrowRightLong } from "react-icons/fa6";
-const Card = ({width,start,para , hover}) => {
+const Card = ({width,start,para , hover=false}) => {
   return (
- 
-    <div className={`gap-5 bg-zinc-800  transition-all  p-5 hover:${hover} rounded-xl ${width} min-h-[28rem] flex flex-col justify-between`}>
+
+    <motion.div whileHover={{backgroundColor:hover ? '#7443ff' :"#5555",padding:'20px'}} transition={{ease:[0.61, 1, 0.88, 1],duration:.2}} className={`gap-5 bg-zinc-800  transition-all  p-5 rounded-xl ${width} min-h-[28rem] flex flex-col justify-between`}>
       <div className="w-full">
       <div className=" text-white justify-between flex items-center">
        <p> One Handling</p>
@@ -24,7 +25,7 @@ const Card = ({width,start,para , hover}) => {
       ( <p className='text-small font-medium mt-[2vw]'>Lorem ipsum dolor sit amet consectetur adipisicing elit. Blanditiis, dignissimos ea? Rem consectetur adipisci deserunt debitis, nam sit quas magnam.</p>)
      }
       </div>
-      </div>
+      </motion.div>
 
   )
 }
